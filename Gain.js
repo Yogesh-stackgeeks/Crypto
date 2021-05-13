@@ -10,7 +10,7 @@ class Gain extends Component {
 
         this.state = {
 
-            arrData: [{ image: Imagepath2.dogecoin, title1: "BITCOIN", market: Imagepath2.up, price: "1.12%" },
+            arrData: [{ image: Imagepath2.bitcoin, title1: "BITCOIN", market: Imagepath2.up, price: "1.12%" },
             { image: Imagepath2.monero, title1: "MONERO", market: Imagepath2.up, price: "5.12%" },
             { image: Imagepath2.peercoin, title1: "PEERCOIN", market: Imagepath2.up, price: "1.12%" },
             { image: Imagepath2.stellar, title1: "STELLAR", market: Imagepath2.up, price: "1.85%" },
@@ -40,7 +40,7 @@ class Gain extends Component {
 
     render() {
         return (
-            <View style={styles.container}>
+            <View style={{flex:1}}>
                 <FlatList
                     data={this.state.arrData}
                     ItemSeparatorComponent={this.FlatListItemSeparator}
@@ -52,20 +52,23 @@ class Gain extends Component {
                             </View>
 
 
-                            <View style={{ flex: 3.5 }}>
+                            <View style={{ flex: 2 }}>
                                 <TouchableOpacity>
                                     <Text style={styles.texts}>{item.title1}</Text>
 
-                                </TouchableOpacity>
-                                <Image source={item.market} style={styles.marketcss} />
+                                </TouchableOpacity></View>
+                            <View style={{ flex: .7 }}>
+                                <Image source={item.market} style={styles.marketcss} /></View>
+                            <View style={{ flex: .7 }}>
                                 <Text style={styles.prices}>{item.price}</Text>
                                 <Text style={styles.prices2}>{item.price2}</Text>
-
-
                             </View>
+
+
                         </View>
 
                     } />
+                   
             </View>
         )
     }
@@ -78,33 +81,39 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: 'white',
-        marginTop: 50,
         flexDirection: "row",
-        justifyContent: "space-around"
+        justifyContent: "space-around",
+        alignContent: 'center',
+        justifyContent: 'center',
     },
     images: {
-        height: 40,
-        width: 40,
+        marginBottom: 28,
+        top: 20,
+        height: 50,
+        width: 50,
         marginLeft: 20,
 
     },
     texts: {
-        fontSize: 20,
+        marginBottom: 25,
+        top: 20,
+        fontSize: 22,
         fontWeight: 'bold',
-        paddingRight: 100
+        paddingRight: 50
     },
 
     marketcss: {
+        top: 30,
         height: 18,
         width: 18,
-        left: 180,
-        bottom: 28
     },
     prices: {
-        left: 210,
-        bottom: 49,
+        top: 30,
         fontSize: 16,
         fontWeight: 'bold',
-        color: 'green'}
-    });
-    
+        color: 'green'
+
+
+    },
+})
+

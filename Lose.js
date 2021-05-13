@@ -52,16 +52,18 @@ class Lose extends Component {
                             </View>
 
 
-                            <View style={{ flex: 3.5 }}>
+                            <View style={{ flex: 2 }}>
                                 <TouchableOpacity>
                                     <Text style={styles.texts}>{item.title1}</Text>
 
-                                </TouchableOpacity>
-                                <Image source={item.market} style={styles.marketcss} />
+                                    </TouchableOpacity></View>
+                                <View style={{ flex: .7}}> 
+                                <Image source={item.market} style={styles.marketcss} /></View>
+                                <View style={{flex:.7}}>
+                                <Text style={styles.prices}>{item.price}</Text>
                                 <Text style={styles.prices2}>{item.price2}</Text>
+                                </View>
 
-
-                            </View>
                         </View>
 
                     } />
@@ -70,38 +72,48 @@ class Lose extends Component {
     }
 }
 
-
 export default Lose;
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: 'white',
-        marginTop: 50,
         flexDirection: "row",
-        justifyContent: "space-around"
+        justifyContent: "space-around",
+        alignContent:'center',
+        justifyContent:'center',
     },
     images: {
-        height: 40,
-        width: 40,
+        marginBottom:28,
+        top:20,
+        height: 50,
+        width: 50,
         marginLeft: 20,
 
     },
     texts: {
-        fontSize: 20,
+        marginBottom:25,
+        top:20,
+        fontSize: 22,
         fontWeight: 'bold',
-        paddingRight: 100
+        paddingRight: 50
     },
 
     marketcss: {
+        top:30,
         height: 18,
         width: 18,
-        left: 180,
-        bottom: 25
+    },
+    prices: {
+        top:30,
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: 'green'
+
+
     },
     prices2: {
-        left: 210,
-        bottom: 47,
+        top:8,
         fontSize: 16,
         fontWeight: 'bold',
         color: 'red'
